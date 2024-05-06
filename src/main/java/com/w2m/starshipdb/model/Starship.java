@@ -1,6 +1,5 @@
 package com.w2m.starshipdb.model;
 
-import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
 import jakarta.persistence.*;
 

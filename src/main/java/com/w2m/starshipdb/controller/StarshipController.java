@@ -3,7 +3,6 @@ package com.w2m.starshipdb.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +43,7 @@ public class StarshipController {
 	}
 	
 	@PostMapping({"/updateStarship"})
-	public ResponseEntity<Starship> updateStarship(@RequestBody Starship ship){
+	public ResponseEntity<Starship> updateStarship(@RequestBody Starship ship) throws Exception{
 		starshipService.updateStarship(ship.getId(), ship.getName(), ship.getSaga());
 		
 		return new ResponseEntity<Starship>(starshipService.getStarshipById(ship.getId()),HttpStatus.OK);

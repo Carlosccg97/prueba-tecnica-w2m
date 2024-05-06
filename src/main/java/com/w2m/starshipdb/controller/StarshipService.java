@@ -14,7 +14,7 @@ public interface StarshipService {
 	
 	Starship insertStarship(Starship starship) throws Exception;
 	
-	void updateStarship(Long id, String name, String saga);
+	void updateStarship(Long id, String name, String saga) throws Exception;
 	
 	void deleteStarshipById(Long id);
 	

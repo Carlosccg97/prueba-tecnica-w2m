@@ -53,10 +53,12 @@ public class StarshipServiceImpl implements StarshipService{
 	}
 
 	@Override
-	public void updateStarship(Long id, String name, String saga) {
+	public void updateStarship(Long id, String name, String saga) throws Exception {
 		Starship shipDB = starshipRepository.findById(id).get();
 		
-		
+		if (shipDB == null) {
+			throw new Exception("ERROR: ID inexistente");
+		}
 		shipDB.setName(name);
 		shipDB.setSaga(saga);
 		starshipRepository.save(shipDB);
